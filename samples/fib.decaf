@@ -1,0 +1,35 @@
+int fib(int base)
+{
+   if (base <= 1) {
+	return base;
+  } else {
+    int i;
+    int f0;
+    int f1;
+    int f2;
+
+    f0 = 0;
+    f1 = 1;
+    i = 2;
+    while (i <= base) {
+	f2 = f0 + f1;
+	f0 = f1;
+	f1 = f2;
+	i = i + 1;
+    }
+    return f2;
+  }
+}
+
+void main()
+{
+   int n;
+    Print("\nThis program computes Fibonacci numbers (slowly.. but correctly!)\n");
+   while (true) {
+      Print("\nEnter the fibonacci number you want: (-1 to quit) ");
+      n = ReadInteger();
+      if (n == -1) break;
+      Print("Fib(", n , ") = ", fib(n), "\n");
+  }
+  Print("Goodbye!\n");
+}
